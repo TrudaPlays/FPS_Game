@@ -8,10 +8,17 @@ public class CameraController : MonoBehaviour
     public Transform playerBody;
     public PlayerMovement playerMovement;
     private float xRotation = 0f;
+    public float cameraBobHeight;
+    public float cameraBobSpeed;
+    float defaultPosY = 0f;
+    float defaultPosX = 0f;
+    float timer = 0;
 
     // Start is called before the first frame update
     void Start()
     {
+        defaultPosY = transform.localPosition.y;
+        defaultPosX = transform.localPosition.x;
         playerBody = transform.parent;
         Cursor.lockState = CursorLockMode.Locked;
         playerMovement = GetComponentInParent<PlayerMovement>();
@@ -41,7 +48,16 @@ public class CameraController : MonoBehaviour
     {
         if(playerMovement.isPlayerWalking)
         {
-
+            timer += Time.deltaTime * cameraBobSpeed;
+            float newY = defaultPosY + Mathf.Sin(timer) * cameraBobHeight;
+            float newX = defaultPosX + Mathf.Cos(timer / 2) * cameraBobHeight;
+            transform.localPosition = new Vector3(newX, newY, transform.localPosition.z);  
+        }
+        else
+        {
+            timer = 0;
+            Vector3 targetPos = new Vector3(defaultPosX, defaultPosY, transform.localPosition.z);
+            transform.localPosition = Vector3.Lerp(transform.localPosition, targetPos, Time.deltaTime * cameraBobSpeed);
         }
     }
 }
