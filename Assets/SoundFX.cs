@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SoundFX : MonoBehaviour
 {
+    //all the sound effects in the game
     public AudioClip playerHurtSound;
     public AudioClip enemyHurtSound;
     public AudioClip gameOverSound;
@@ -13,11 +14,6 @@ public class SoundFX : MonoBehaviour
     public AudioClip burgerPickupSound;
 
     public AudioSource audioSrc;
-
-    void Start()
-    {
-
-    }
     public void PickUpAmmo()
     {
         audioSrc.PlayOneShot(ammoPickupSound);
@@ -26,12 +22,10 @@ public class SoundFX : MonoBehaviour
     {
         audioSrc.PlayOneShot(burgerPickupSound);
     }
-
     public void PlayerHurt()
     {
         audioSrc.PlayOneShot(playerHurtSound);
     }
-
     public void EnemyHit()
     {
         audioSrc.PlayOneShot(enemyHurtSound);
@@ -42,16 +36,10 @@ public class SoundFX : MonoBehaviour
     }
     public void LevelComplete()
     {
-        
+        //does nothing
     }
     public void PlayerShoot()
     {
         audioSrc.PlayOneShot(playerShootSound);
     }
-
-
-
-
-
-
 }

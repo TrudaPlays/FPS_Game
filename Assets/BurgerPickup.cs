@@ -21,17 +21,12 @@ public class BurgerPickup : MonoBehaviour
                 SoundFX sfx = FindObjectOfType<SoundFX>();
                 if (sfx != null)
                 {
-                    // Play your pickup sound here
+                    // Plays the pickup sound here
                     sfx.PickUpBurger();
                 }
                 Destroy(gameObject);
             }
         }
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
     }
 
     // Update is called once per frame

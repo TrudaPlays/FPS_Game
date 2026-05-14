@@ -18,7 +18,7 @@ public class EnemyHealth : MonoBehaviour
 
     public SoundFX soundFX;
 
-    public GameObject deathEffect; // Drag a particle prefab here later
+    public GameObject deathEffect;
 
     private Renderer[] enemyRenderers;
     private List<Color> originalColors = new List<Color>();
@@ -41,7 +41,6 @@ public class EnemyHealth : MonoBehaviour
             }
         }
     }
-
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
@@ -84,7 +83,7 @@ public class EnemyHealth : MonoBehaviour
 
     void Die()
     {
-        //spawns some ammo at the player's feet for as a bonus for defeating the enemy!
+        //spawns some ammo or a burger at the player's feet for as a bonus for defeating the enemy!
         Vector3 spawnPos = transform.position + new Vector3(0, 0.2f, 0);
         float drop;
         drop = Random.Range(0, 2);
@@ -100,14 +99,7 @@ public class EnemyHealth : MonoBehaviour
         {
             Instantiate(deathEffect, transform.position, Quaternion.identity);
         }
-        // Destroy the enemy object
+        // Destroy the enemy object LAST or we run into nullreference errors...eeek!!
         Destroy(gameObject);
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }

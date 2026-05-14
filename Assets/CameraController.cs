@@ -30,7 +30,6 @@ public class CameraController : MonoBehaviour
     {
         BounceCamera();
         CameraLook();
-        
     }
 
     public void CameraLook()

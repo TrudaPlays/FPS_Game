@@ -21,25 +21,18 @@ public class AmmoPickup : MonoBehaviour
                 SoundFX sfx = FindObjectOfType<SoundFX>();
                 if (sfx != null)
                 {
-                    // Play your pickup sound here
+                    // Plays the pickup sound here
                     sfx.PickUpAmmo(); 
                 }
                 Destroy(gameObject);
-
-                // Optional: Play a sound effect from your SoundFX script here
-                // FindObjectOfType<SoundFX>().PlayPickupSound();
             }
         }
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
+        //makes the ammo spin around and hover 
         transform.Rotate(Vector3.up * 50 * Time.deltaTime);
     }
 }

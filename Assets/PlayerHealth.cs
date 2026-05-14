@@ -65,12 +65,7 @@ public class PlayerHealth : MonoBehaviour
         Cursor.visible = true;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    //flashes the screen red
     public IEnumerator ScreenFlashRed()
     {
         hurtScreen.SetActive (true);

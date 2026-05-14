@@ -32,6 +32,7 @@ public class ShootingController : MonoBehaviour
         {
             StartCoroutine(Fire());
         }
+        //this makes it impossible to fire without ammunition
         else if(ammoCount <= 0)
         {
             ammoText.text = "Out of ammo!! Ammo: " + ammoCount.ToString();
@@ -58,7 +59,7 @@ public class ShootingController : MonoBehaviour
                 Debug.Log("Enemy damaged!");
             }
         }
-        // Visualize the ray in the Scene view
+        // Visualize the ray in the Scene view for testing purposes
         Debug.DrawRay(shootPoint.position, shootPoint.forward * fireRange, Color.green);
         yield return new WaitForSeconds(fireRate);
         isFiring = false;
