@@ -1,2 +1,6 @@
 # FPS_Game
-
+What was different about working in 3D vs. 2D,
+and what challenged you the most this week?
+Number one what was different was using all 3 axes, X, Y and Z versus just X and Y. I had to think in three dimensions now, and get the hang of placing out cubes, spheres and cylinders so that they looked right from multiple angles not just the front view like the 2D sidescroller and top-down games I've made before. I had to figure out the RayCast functionality, as that was how I could shoot my enemies and how they would damage me. 
+What I think challenged me most was figuring out how to make my fish flash red, as before when they were just cubes it was easy: just turn the texture color to red and then back to blue. However, with the fish being a prefab model with different textures for the eyes, stripes and scales, I had to do nested foreach loops that would first loop through all of the renderers on the fish, and then inside of each renderer loop through all the materials and change their colors. 
+Secondly what challenged me the most was figuring out the player give/take damage and the enemy give/take damage loop. Using raycast, colliders and a BUNCH of scripts, I was able to turn on a hurt screen for when the player gets hurt, update the HUD and either trigger the Game Over screen or the Level Complete Screen depending.
