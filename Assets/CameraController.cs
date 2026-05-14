@@ -21,6 +21,7 @@ public class CameraController : MonoBehaviour
         defaultPosX = transform.localPosition.x;
         playerBody = transform.parent;
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         playerMovement = GetComponentInParent<PlayerMovement>();
     }
 
